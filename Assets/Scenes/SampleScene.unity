@@ -164,7 +164,7 @@ GameObject:
   - component: {fileID: 270932554}
   - component: {fileID: 270932553}
   - component: {fileID: 270932552}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Floating plataform 4
   m_TagString: Ground
   m_Icon: {fileID: 0}
@@ -326,7 +326,7 @@ GameObject:
   - component: {fileID: 284530224}
   - component: {fileID: 284530221}
   - component: {fileID: 284530223}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Main ground
   m_TagString: Ground
   m_Icon: {fileID: 0}
@@ -488,7 +488,7 @@ GameObject:
   - component: {fileID: 296156836}
   - component: {fileID: 296156835}
   - component: {fileID: 296156834}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Floating plataform 2
   m_TagString: Ground
   m_Icon: {fileID: 0}
@@ -996,9 +996,9 @@ Rigidbody2D:
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 1
-  m_LinearDamping: 1
+  m_LinearDamping: 0
   m_AngularDamping: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 2
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
@@ -1071,6 +1071,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0dd8b0cc46107c89383b3d9f0e0c4a93, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  <MoveSpeed>k__BackingField: 7
+  <JumpForce>k__BackingField: 2.25
 --- !u!1 &744326347
 GameObject:
   m_ObjectHideFlags: 0
@@ -1083,7 +1085,7 @@ GameObject:
   - component: {fileID: 744326351}
   - component: {fileID: 744326350}
   - component: {fileID: 744326349}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Floating plataform 7
   m_TagString: Ground
   m_Icon: {fileID: 0}
@@ -1284,7 +1286,7 @@ GameObject:
   - component: {fileID: 1312302420}
   - component: {fileID: 1312302419}
   - component: {fileID: 1312302418}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Floating plataform 1
   m_TagString: Ground
   m_Icon: {fileID: 0}
@@ -1608,7 +1610,7 @@ GameObject:
   - component: {fileID: 1512232978}
   - component: {fileID: 1512232977}
   - component: {fileID: 1512232976}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Floating plataform 6
   m_TagString: Ground
   m_Icon: {fileID: 0}
@@ -1801,7 +1803,7 @@ GameObject:
   - component: {fileID: 1560850347}
   - component: {fileID: 1560850346}
   - component: {fileID: 1560850345}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Floating plataform 3
   m_TagString: Ground
   m_Icon: {fileID: 0}
@@ -1994,7 +1996,7 @@ GameObject:
   - component: {fileID: 1686595792}
   - component: {fileID: 1686595791}
   - component: {fileID: 1686595790}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Floating plataform 5
   m_TagString: Ground
   m_Icon: {fileID: 0}

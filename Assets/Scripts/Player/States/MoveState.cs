@@ -8,16 +8,16 @@ namespace Player.States
 
         public override void Update()
         {
+            RestoreJumps();
+            if (__jumpAction.WasPerformedThisFrame() && Player.JumpCount > 0)
+                StateMachine.TransitionTo(Player.JumpState);
             if (!__moveAction.IsInProgress())
                 StateMachine.TransitionTo(Player.IdleState);    
         }
 
         public override void FixedUpdate()
         {
-            Vector2 velocity = Vector2.right * (Player.MoveSpeed * __moveAction.ReadValue<Vector2>().x);
-            Player.RigidBody.MovePosition(
-                Player.RigidBody.position + velocity * Time.fixedDeltaTime
-            );
+            Player.RigidBody.linearVelocityX = Player.MoveSpeed * __moveAction.ReadValue<Vector2>().x;
         }
     }
 }

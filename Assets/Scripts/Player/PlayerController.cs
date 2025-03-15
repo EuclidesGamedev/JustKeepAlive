@@ -10,6 +10,7 @@ namespace Player
         #region State
         public StateMachine StateMachine { get; private set; }
         public IdleState IdleState { get; private set; }
+        public JumpState JumpState { get; private set; }
         public MoveState MoveState { get; private set; }
         #endregion
         
@@ -20,6 +21,8 @@ namespace Player
         #region Propeties
 
         [field: SerializeField] public float MoveSpeed { get; private set; } = 5f;
+        [field: SerializeField] public float JumpForce { get; private set; } = 2f;
+        public uint JumpCount { get; set; } = 1;
         #endregion
 
         private void Awake()
@@ -31,6 +34,7 @@ namespace Player
         private void Start()
         {
             IdleState = new IdleState(this);
+            JumpState = new JumpState(this);
             MoveState = new MoveState(this);
             StateMachine.Initialize(IdleState);
         }
