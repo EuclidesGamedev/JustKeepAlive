@@ -2,7 +2,7 @@ using UnityEngine;
 
 namespace Game.States
 {
-    public class PausingState : MonoBehaviour
+    public class PausingState : GameState
     {
     
     }

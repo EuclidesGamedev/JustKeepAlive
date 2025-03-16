@@ -2,7 +2,7 @@ using UnityEngine;
 
 namespace Game.States
 {
-    public class StartingState : MonoBehaviour
+    public class StartingState : GameState
     {
     
     }
