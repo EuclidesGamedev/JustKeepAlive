@@ -996,7 +996,7 @@ Rigidbody2D:
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 1
-  m_LinearDamping: 0
+  m_LinearDamping: 2
   m_AngularDamping: 0.05
   m_GravityScale: 2
   m_Material: {fileID: 0}
@@ -1071,6 +1071,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0dd8b0cc46107c89383b3d9f0e0c4a93, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  <DashSpeed>k__BackingField: 20
   <MoveSpeed>k__BackingField: 7
   <JumpForce>k__BackingField: 2.25
 --- !u!1 &744326347

@@ -20,8 +20,11 @@ namespace Player.States
 
         public override void Update()
         {
+            UpdateDirection();
             if (Physics2D.OverlapPoint(Player.transform.position + Vector3.up * .51f,  LayerMask.GetMask("Ground")))
                 StateMachine.TransitionTo(Player.IdleState);
+            if (__dashAction.WasPerformedThisFrame())
+                StateMachine.TransitionTo(Player.DashState);
             if (Mathf.Abs(Player.RigidBody.position.y - _targetInY) < .05f)
                 StateMachine.TransitionTo(Player.IdleState);
             if (!__jumpAction.IsInProgress())

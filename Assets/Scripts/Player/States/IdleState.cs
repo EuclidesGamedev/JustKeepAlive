@@ -5,6 +5,7 @@ namespace Player.States
 {
     public class IdleState : PlayerState
     {
+        protected InputAction __dashAction;
         protected InputAction __jumpAction;
         protected InputAction __moveAction;
 
@@ -17,6 +18,7 @@ namespace Player.States
         
         public IdleState(PlayerController player) : base(player)
         {
+            __dashAction = InputSystem.actions.FindAction("Crouch");
             __jumpAction = InputSystem.actions.FindAction("Jump");
             __moveAction = InputSystem.actions.FindAction("Move");
         }
@@ -29,10 +31,18 @@ namespace Player.States
         public override void Update()
         {
             RestoreJumps();
+            if (__dashAction.WasPerformedThisFrame())
+                StateMachine.TransitionTo(Player.DashState);
             if (__jumpAction.WasPerformedThisFrame() && Player.JumpCount > 0)
                 StateMachine.TransitionTo(Player.JumpState);
             if (__moveAction.IsInProgress())
                 StateMachine.TransitionTo(Player.MoveState);
+        }
+
+        protected void UpdateDirection()
+        {
+            if (__moveAction.ReadValue<Vector2>().x != 0)
+                Player.LookDirection = __moveAction.ReadValue<Vector2>().x;
         }
     }
 }
