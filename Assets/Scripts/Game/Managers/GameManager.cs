@@ -15,5 +15,9 @@ namespace Game.Managers
             DontDestroyOnLoad(gameObject);
         }
         #endregion
+        
+        #region Managers
+        public static LevelManager LevelManager { get; set; }
+        #endregion
     }
 }
