@@ -1,7 +1,7 @@
 using AI.State.Interfaces;
 using AI.State;
 
-namespace Player.States
+namespace Player
 {
     public abstract class PlayerState : IState
     {
