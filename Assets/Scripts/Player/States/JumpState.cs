@@ -21,7 +21,7 @@ namespace Player.States
         public override void Update()
         {
             UpdateDirection();
-            if (Physics2D.OverlapPoint(Player.transform.position + Vector3.up * .51f,  LayerMask.GetMask("Ground")))
+            if (Physics2D.OverlapPoint(Player.transform.position + Vector3.up * .251f,  LayerMask.GetMask("Ground")))
                 StateMachine.TransitionTo(Player.IdleState);
             if (__dashAction.WasPerformedThisFrame())
                 StateMachine.TransitionTo(Player.DashState);
