@@ -18,7 +18,7 @@ namespace Player.States
         
         public IdleState(PlayerController player) : base(player)
         {
-            __dashAction = InputSystem.actions.FindAction("Crouch");
+            __dashAction = InputSystem.actions.FindAction("Dash");
             __jumpAction = InputSystem.actions.FindAction("Jump");
             __moveAction = InputSystem.actions.FindAction("Move");
         }
