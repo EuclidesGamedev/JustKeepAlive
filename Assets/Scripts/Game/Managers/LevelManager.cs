@@ -16,8 +16,8 @@ namespace Game.Managers
 
         private void Update()
         {
-            _timer -= Time.deltaTime;
-            _timerText.text = _timer.ToString().Substring(0, _timer.ToString().IndexOf('.') + 3);
+            _timer = Mathf.Max(_timer - Time.deltaTime * 8, 0);
+            _timerText.text = _timer.ToString("00.00");
         }
     }
 }
