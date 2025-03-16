@@ -11,9 +11,15 @@ namespace Player.States
 
         protected void RestoreJumps()
         {
-            Collider2D collider = Physics2D.OverlapPoint(Player.transform.position + Vector3.down * .251f);
-            if (collider && collider.CompareTag("Ground"))
-                Player.JumpCount = 1;
+            Collider2D[] collider = Physics2D.OverlapAreaAll(
+                Player.transform.position + Vector3.down * .251f + Vector3.left * .25f,
+                Player.transform.position + Vector3.down * .251f + Vector3.right * .25f
+            );
+            foreach (Collider2D collider2D in collider)
+            {
+                if (collider2D.CompareTag("Ground"))
+                    Player.JumpCount = 1;
+            }
         }
         
         public IdleState(PlayerController player) : base(player)
