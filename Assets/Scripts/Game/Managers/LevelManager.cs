@@ -1,21 +1,17 @@
 using Player;
-using TMPro;
 using UnityEngine;
+using UnityEngine.Events;
 
 namespace Game.Managers
 {
     public class LevelManager : MonoBehaviour
     {
-        [field: SerializeField]
-        public RectTransform GameOverPanel { get; private set; }
-        [field: SerializeField]
-        public RectTransform PausingPanel { get; private set; }
+        public UnityEvent OnTimerUpdated;
+        
         [field: SerializeField]
         public Counter Counter { get; private set; }
         [field: SerializeField]
         public PlayerController Player { get; private set; }
-        [field: SerializeField]
-        public TMP_Text TimerText {get; private set;}
 
         private float _timer = 60f;
 
@@ -25,7 +21,7 @@ namespace Game.Managers
             set
             {
                 _timer = value;
-                TimerText.text = _timer.ToString("00.00");
+                GameManager.UIManager.TimerText.text = Timer.ToString("00.00");
             }
         }
 

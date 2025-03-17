@@ -8,12 +8,12 @@ namespace Game.States
     {
         public override void Enter()
         {
-            Level.GameOverPanel.gameObject.SetActive(true);
+            UI.GameOverPanel.gameObject.SetActive(true);
         }
         
         public override void Exit()
         {
-            Level.GameOverPanel.gameObject.SetActive(false);
+            UI.GameOverPanel.gameObject.SetActive(false);
         }
 
         public override void Update()

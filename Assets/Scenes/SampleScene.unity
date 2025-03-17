@@ -1333,9 +1333,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: '60
-
-'
+  m_text: 60.00
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -2022,7 +2020,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1042475369
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2415,6 +2413,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1483056243}
   - component: {fileID: 1483056244}
+  - component: {fileID: 1483056245}
   m_Layer: 0
   m_Name: Level Manager
   m_TagString: Untagged
@@ -2449,9 +2448,37 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d866245fc2c4e2e5b8a62b64457a74fc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  <GameOverPanel>k__BackingField: {fileID: 87936074}
+  OnTimerUpdated:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1483056245}
+        m_TargetAssemblyTypeName: Game.Managers.UIManager, Assembly-CSharp
+        m_MethodName: UpdateTimerText
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   <Counter>k__BackingField: {fileID: 298440624}
   <Player>k__BackingField: {fileID: 610705818}
+--- !u!114 &1483056245
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1483056242}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 00c72ea3ab3ccd33fa86b13b38304491, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  <GameOverPanel>k__BackingField: {fileID: 87936074}
+  <PausingPanel>k__BackingField: {fileID: 1042475369}
   <TimerText>k__BackingField: {fileID: 567448309}
 --- !u!1 &1512232974
 GameObject:

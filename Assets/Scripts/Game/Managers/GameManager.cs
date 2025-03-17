@@ -21,6 +21,7 @@ namespace Game.Managers
         
         #region Managers
         public static LevelManager LevelManager { get; set; }
+        public static UIManager UIManager { get; set; }
         #endregion
         
         

@@ -7,7 +7,7 @@ namespace Game.States
     {
         public override void Enter()
         {
-            Level.PausingPanel.gameObject.SetActive(true);
+            UI.PausingPanel.gameObject.SetActive(true);
             Time.timeScale = 0;
         }
 
@@ -19,7 +19,7 @@ namespace Game.States
 
         public override void Exit()
         {
-            Level.PausingPanel.gameObject.SetActive(false);
+            UI.PausingPanel.gameObject.SetActive(false);
             Time.timeScale = 1;
         }
     }

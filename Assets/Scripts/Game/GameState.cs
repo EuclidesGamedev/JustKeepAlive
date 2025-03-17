@@ -7,6 +7,7 @@ namespace Game
     {
         protected GameManager Game => GameManager.Instance;
         protected LevelManager Level => GameManager.LevelManager;
+        protected UIManager UI => GameManager.UIManager;
         
         public virtual void Enter() {}
         public virtual void Exit() {}
