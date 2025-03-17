@@ -23,11 +23,18 @@ namespace Game.Managers
         public static LevelManager LevelManager { get; set; }
         #endregion
         
+        
         #region MonoBehaviour
-
         private void Start()
         {
             SetupStatemachine();
+        }
+        #endregion
+        
+        #region Public Methods
+        public void StartGameplay()
+        {
+            StateMachine.TransitionTo(GameplayState);
         }
         #endregion
         
