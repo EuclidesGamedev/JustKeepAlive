@@ -36,6 +36,18 @@ namespace Game.Managers
         {
             StateMachine.TransitionTo(GameplayState);
         }
+
+        public void GameOver()
+        {
+            StateMachine.TransitionTo(GameoverState);
+        }
+
+        public void ResetGame()
+        {
+            LevelManager.Player.Reset();
+            LevelManager.Timer = 60f;
+            LevelManager.UpdateTimerText();
+        }
         #endregion
         
         #region State

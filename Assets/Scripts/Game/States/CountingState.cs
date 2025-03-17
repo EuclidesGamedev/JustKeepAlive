@@ -6,7 +6,15 @@ namespace Game.States
     {
         public override void Enter()
         {
+            Game.ResetGame();
+            Level.Counter.gameObject.SetActive(true);
             Level.Counter.Animator.Play("Counting");
+        }
+
+        public override void Exit()
+        {
+            Level.Counter.Animator.Play("Empty");
+            Level.Counter.gameObject.SetActive(false);
         }
     }
 }

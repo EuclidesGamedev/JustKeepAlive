@@ -1,12 +1,17 @@
+using System;
 using AI.State;
 using Player.States;
 using UnityEngine;
-using UnityEngine.InputSystem;
+using UnityEngine.Events;
 
 namespace Player
 {
     public class PlayerController : MonoBehaviour
     {
+        #region Events
+        public UnityEvent OnDeath;
+        #endregion
+        
         #region State
         public StateMachine StateMachine { get; private set; }
         public DashState DashState { get; private set; }
@@ -40,6 +45,17 @@ namespace Player
             JumpState = new JumpState(this);
             MoveState = new MoveState(this);
             StateMachine.Initialize(IdleState);
+        }
+        
+        private void OnDisable()
+        {
+            OnDeath?.Invoke();
+        }
+
+        public void Reset()
+        {
+            gameObject.SetActive(true);
+            transform.position = Vector2.down * 2.45f;
         }
     }
 }
