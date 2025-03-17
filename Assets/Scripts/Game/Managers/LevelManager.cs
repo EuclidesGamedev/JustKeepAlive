@@ -9,6 +9,8 @@ namespace Game.Managers
         [field: SerializeField]
         public RectTransform GameOverPanel { get; private set; }
         [field: SerializeField]
+        public RectTransform PausingPanel { get; private set; }
+        [field: SerializeField]
         public Counter Counter { get; private set; }
         [field: SerializeField]
         public PlayerController Player { get; private set; }
