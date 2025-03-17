@@ -55,7 +55,7 @@ namespace Player
         public void Reset()
         {
             gameObject.SetActive(true);
-            transform.position = Vector2.down * 2.45f;
+            transform.position = Vector2.down * 4.45f;
         }
     }
 }
