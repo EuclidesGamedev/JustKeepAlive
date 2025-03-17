@@ -7,7 +7,6 @@ namespace Game.States
         public override void Update()
         {
             Level.Timer = Mathf.Max(Level.Timer - Time.deltaTime * 8, 0);
-            Level.UpdateTimerText();
         }
     }
 }

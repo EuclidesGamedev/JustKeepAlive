@@ -46,7 +46,6 @@ namespace Game.Managers
         {
             LevelManager.Player.Reset();
             LevelManager.Timer = 60f;
-            LevelManager.UpdateTimerText();
         }
         #endregion
         
