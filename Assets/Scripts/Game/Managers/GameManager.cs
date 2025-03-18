@@ -1,11 +1,15 @@
 using AI.State;
 using Game.States;
 using UnityEngine;
+using UnityEngine.Events;
 
 namespace Game.Managers
 {
     public class GameManager : MonoBehaviour
     {
+        public UnityEvent OnGameStart;
+        public UnityEvent OnGameEnd;
+        
         #region Singleton
         public static GameManager Instance { get; private set; }
 
@@ -46,11 +50,6 @@ namespace Game.Managers
         public void GameOver()
         {
             StateMachine.TransitionTo(GameoverState);
-        }
-
-        public void GameWon()
-        {
-            StateMachine.TransitionTo(GameWonState);
         }
 
         public void ResetGame()

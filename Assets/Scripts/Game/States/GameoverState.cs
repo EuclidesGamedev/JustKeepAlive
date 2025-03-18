@@ -8,6 +8,7 @@ namespace Game.States
     {
         public override void Enter()
         {
+            Game.OnGameEnd?.Invoke();
             UI.GameOverPanel.gameObject.SetActive(true);
         }
         

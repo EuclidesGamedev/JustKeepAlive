@@ -7,6 +7,7 @@ namespace Game.States
     {
         public override void Enter()
         {
+            Game.OnGameEnd?.Invoke();
             UI.GameWonPanel.gameObject.SetActive(true);
         }
 
