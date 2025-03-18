@@ -24,7 +24,6 @@ namespace Game.Managers
         public static UIManager UIManager { get; set; }
         #endregion
         
-        
         #region MonoBehaviour
         private void Start()
         {
@@ -33,6 +32,12 @@ namespace Game.Managers
         #endregion
         
         #region Public Methods
+
+        public void StartCounting()
+        {
+            StateMachine.TransitionTo(CountingState);
+        }
+        
         public void StartGameplay()
         {
             StateMachine.TransitionTo(GameplayState);
@@ -41,6 +46,11 @@ namespace Game.Managers
         public void GameOver()
         {
             StateMachine.TransitionTo(GameoverState);
+        }
+
+        public void GameWon()
+        {
+            StateMachine.TransitionTo(GameWonState);
         }
 
         public void ResetGame()
@@ -54,6 +64,7 @@ namespace Game.Managers
         public CountingState CountingState { get; private set; }
         public GameoverState GameoverState { get; private set; }
         public GameplayState GameplayState { get; private set; }
+        public GameWonState GameWonState { get; private set; }
         public PausingState PausingState { get; private set; }
         public StateMachine StateMachine { get; private set; }
         private void SetupStatemachine()
@@ -61,6 +72,7 @@ namespace Game.Managers
             CountingState = new CountingState();
             GameoverState = new GameoverState();
             GameplayState = new GameplayState();
+            GameWonState = new GameWonState();
             PausingState = new PausingState();
 
             StateMachine = GetComponent<StateMachine>();

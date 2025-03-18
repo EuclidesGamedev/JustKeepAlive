@@ -8,6 +8,8 @@ namespace Game.Managers
         [field: SerializeField]
         public RectTransform GameOverPanel { get; private set; }
         [field: SerializeField]
+        public RectTransform GameWonPanel { get; private set; }
+        [field: SerializeField]
         public RectTransform PausingPanel { get; private set; }
         [field: SerializeField]
         public TMP_Text TimerText { get; private set; }

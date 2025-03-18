@@ -9,7 +9,7 @@ namespace Game.Managers
         public UnityEvent OnTimerUpdated;
         
         [field: SerializeField]
-        public Counter Counter { get; private set; }
+        public UIAnimator Counter { get; private set; }
         [field: SerializeField]
         public PlayerController Player { get; private set; }
 
