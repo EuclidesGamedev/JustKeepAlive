@@ -47,6 +47,13 @@ namespace Utils
         public void Activate() { _isSpawning = true; }
         public void Deactivate() { _isSpawning = false; }
 
+        public void FullyDeactivate()
+        {
+            foreach (PooledObject pooledObject in _objectContainer.GetComponentsInChildren<PooledObject>())
+                _objectPool.Release(pooledObject);
+            Deactivate();
+        }
+
         public PooledObject GetProduct(Vector3 position)
         {
             PooledObject instance = _objectPool.Get();

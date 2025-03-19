@@ -1,10 +1,11 @@
 using AI.State;
 using Enemy.States;
 using UnityEngine;
+using Utils;
 
 namespace Enemy
 {
-    public class EnemyController : MonoBehaviour
+    public class EnemyController : PooledObject
     {
         #region Components
         public Rigidbody2D Rigidbody { get; private set; }
@@ -45,7 +46,7 @@ namespace Enemy
                 MoveDirection = -MoveDirection;
 
             if (collision.collider.CompareTag(DestroyOnTouchTag))
-                Destroy(gameObject);
+                __objectPool.Release(this);
             
             if (collision.collider.CompareTag("Player"))
                 collision.gameObject.SetActive(false);
