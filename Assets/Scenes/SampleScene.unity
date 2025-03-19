@@ -3862,7 +3862,7 @@ GameObject:
   - component: {fileID: 2051610093}
   - component: {fileID: 2051610094}
   m_Layer: 0
-  m_Name: Water spawner
+  m_Name: Rain spawner
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3895,7 +3895,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 87c8a9eda5e37189f9c9aa6b2de45c57, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _objectToSpawn: {fileID: 5109822328141114609, guid: f710b6579ad7c2facad2a8e5571a0b70, type: 3}
+  _objectToSpawn: {fileID: 3734776278692296766, guid: f710b6579ad7c2facad2a8e5571a0b70, type: 3}
   _collectionCheck: 1
   _defaultPoolSize: 10
   _maxPoolSize: 20
