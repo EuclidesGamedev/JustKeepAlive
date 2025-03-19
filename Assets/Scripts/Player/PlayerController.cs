@@ -25,6 +25,7 @@ namespace Player
         #endregion
         
         #region Propeties
+        [field: Header("Propeties")]
         [field: SerializeField] public float DashSpeed { get; private set; } = 8f;
         [field: SerializeField] public float MoveSpeed { get; private set; } = 5f;
         [field: SerializeField] public float JumpForce { get; private set; } = 2f;
