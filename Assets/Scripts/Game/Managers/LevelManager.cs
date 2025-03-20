@@ -9,6 +9,8 @@ namespace Game.Managers
         public UnityEvent OnTimerUpdated;
         
         [field: SerializeField]
+        public AudioHandler AudioHandler { get; private set; }
+        [field: SerializeField]
         public UIAnimator Counter { get; private set; }
         [field: SerializeField]
         public PlayerController Player { get; private set; }
@@ -28,6 +30,7 @@ namespace Game.Managers
         private void Awake()
         {
             GameManager.LevelManager = this;
+            AudioHandler = GetComponent<AudioHandler>();
         }
     }
 }

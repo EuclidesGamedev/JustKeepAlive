@@ -10,6 +10,7 @@ namespace Player.States
         public override void Enter()
         {
             _targetInY = Player.transform.position.y + Player.JumpForce;
+            Player.AudioHandler.Play(0);
             Player.JumpCount--;
         }
 

@@ -21,6 +21,7 @@ namespace Player
         #endregion
         
         #region Components
+        public AudioHandler AudioHandler { get; private set; }
         public Rigidbody2D RigidBody { get; private set; }
         #endregion
         
@@ -35,6 +36,7 @@ namespace Player
 
         private void Awake()
         {
+            AudioHandler = GetComponent<AudioHandler>();
             RigidBody = GetComponent<Rigidbody2D>();
             StateMachine = GetComponent<StateMachine>();
         }

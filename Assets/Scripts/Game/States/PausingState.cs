@@ -8,6 +8,7 @@ namespace Game.States
         public override void Enter()
         {
             UI.PausingPanel.gameObject.SetActive(true);
+            Level.AudioHandler.Play(0);
             Time.timeScale = 0;
         }
 
@@ -20,6 +21,7 @@ namespace Game.States
         public override void Exit()
         {
             UI.PausingPanel.gameObject.SetActive(false);
+            Level.AudioHandler.Play(1);
             Time.timeScale = 1;
         }
     }

@@ -9,6 +9,7 @@ namespace Game.States
         public override void Enter()
         {
             Game.OnGameEnd?.Invoke();
+            Level.AudioHandler.Play(2);
             UI.GameOverPanel.gameObject.SetActive(true);
         }
         

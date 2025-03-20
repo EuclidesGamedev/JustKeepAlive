@@ -10,6 +10,7 @@ namespace Player.States
         public override void Enter()
         {
             Player.RigidBody.linearVelocity = Vector2.right * (Player.LookDirection * Player.DashSpeed);
+            Player.AudioHandler.Play(0);
             _dashTimer = .125f;
         }
 
