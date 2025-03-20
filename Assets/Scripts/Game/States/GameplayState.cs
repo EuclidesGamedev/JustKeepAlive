@@ -8,6 +8,7 @@ namespace Game.States
         public override void Enter()
         {
             Game.OnGameStart?.Invoke();
+            InputSystem.actions.FindActionMap("Player").Enable();
         }
         
         public override void Update()

@@ -37,6 +37,11 @@ namespace Game.Managers
         
         #region Public Methods
 
+        public void GoToMainMenu()
+        {
+            StateMachine.TransitionTo(MainMenuState);
+        }
+        
         public void StartCounting()
         {
             StateMachine.TransitionTo(CountingState);
@@ -57,6 +62,12 @@ namespace Game.Managers
             LevelManager.Player.Reset();
             LevelManager.Timer = 60f;
         }
+
+        public void QuitApplication()
+        {
+            UnityEditor.EditorApplication.isPlaying = false;
+            Application.Quit();
+        }
         #endregion
         
         #region State
@@ -64,6 +75,7 @@ namespace Game.Managers
         public GameoverState GameoverState { get; private set; }
         public GameplayState GameplayState { get; private set; }
         public GameWonState GameWonState { get; private set; }
+        public MainMenuState MainMenuState { get; private set; }
         public PausingState PausingState { get; private set; }
         public StateMachine StateMachine { get; private set; }
         private void SetupStatemachine()
@@ -72,10 +84,11 @@ namespace Game.Managers
             GameoverState = new GameoverState();
             GameplayState = new GameplayState();
             GameWonState = new GameWonState();
+            MainMenuState = new MainMenuState();
             PausingState = new PausingState();
 
             StateMachine = GetComponent<StateMachine>();
-            StateMachine.Initialize(CountingState);
+            StateMachine.Initialize(MainMenuState);
         }
         #endregion
     }
