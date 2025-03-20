@@ -9,6 +9,7 @@ namespace Player.States
         public DashState(PlayerController player) : base(player) {}
         public override void Enter()
         {
+            Player.Animator.Play("Jump");
             Player.RigidBody.linearVelocity = Vector2.right * (Player.LookDirection * Player.DashSpeed);
             Player.AudioHandler.Play(0);
             _dashTimer = .125f;

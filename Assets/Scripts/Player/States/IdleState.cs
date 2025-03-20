@@ -11,15 +11,7 @@ namespace Player.States
 
         protected void RestoreJumps()
         {
-            Collider2D[] collider = Physics2D.OverlapAreaAll(
-                Player.transform.position + Vector3.down * .251f + Vector3.left * .25f,
-                Player.transform.position + Vector3.down * .251f + Vector3.right * .25f
-            );
-            foreach (Collider2D collider2D in collider)
-            {
-                if (collider2D.CompareTag("Ground"))
-                    Player.JumpCount = 1;
-            }
+            Player.JumpCount = 1;
         }
         
         public IdleState(PlayerController player) : base(player)
@@ -36,7 +28,13 @@ namespace Player.States
 
         public override void Update()
         {
-            RestoreJumps();
+            if (OnGround())
+            {
+                Player.Animator.Play("Idle");
+                RestoreJumps();
+            }
+            else Player.Animator.Play("Jump");
+            
             if (__dashAction.WasPerformedThisFrame())
                 StateMachine.TransitionTo(Player.DashState);
             if (__jumpAction.WasPerformedThisFrame() && Player.JumpCount > 0)
@@ -48,7 +46,7 @@ namespace Player.States
         protected void UpdateDirection()
         {
             if (__moveAction.ReadValue<Vector2>().x != 0)
-                Player.LookDirection = __moveAction.ReadValue<Vector2>().x;
+                Player.LookDirection = Mathf.Round(__moveAction.ReadValue<Vector2>().x);
         }
     }
 }

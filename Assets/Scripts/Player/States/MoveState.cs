@@ -8,7 +8,13 @@ namespace Player.States
 
         public override void Update()
         {
-            RestoreJumps();
+            if (OnGround())
+            {
+                Player.Animator.Play("Run");
+                RestoreJumps();
+            }
+            else Player.Animator.Play("Jump");
+            
             UpdateDirection();
             if (__dashAction.WasPerformedThisFrame())
                 StateMachine.TransitionTo(Player.DashState);
