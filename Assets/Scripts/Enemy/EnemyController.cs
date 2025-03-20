@@ -1,5 +1,6 @@
 using AI.State;
 using Enemy.States;
+using Player;
 using UnityEngine;
 using Utils;
 
@@ -49,7 +50,7 @@ namespace Enemy
                 __objectPool.Release(this);
             
             if (collision.collider.CompareTag("Player"))
-                collision.gameObject.SetActive(false);
+                collision.gameObject.GetComponent<PlayerController>().TakeDamage();
         }
     }
 }

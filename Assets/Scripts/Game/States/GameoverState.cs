@@ -21,7 +21,7 @@ namespace Game.States
         public override void Update()
         {
             if (InputSystem.actions.FindAction("Submit").WasPressedThisFrame())
-                Game.StateMachine.TransitionTo(Game.MainMenuState);
+                Game.StateMachine.TransitionTo(Game.CountingState);
         }
     }
 }

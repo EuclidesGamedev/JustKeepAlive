@@ -1,3 +1,4 @@
+using Player;
 using UnityEngine;
 using Utils;
 
@@ -21,7 +22,7 @@ namespace Objects
             }
             
             if (collision.CompareTag("Player"))
-                collision.gameObject.SetActive(false);
+                collision.gameObject.GetComponent<PlayerController>().TakeDamage();
         }
     }
 }

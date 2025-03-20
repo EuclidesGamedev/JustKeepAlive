@@ -8,7 +8,6 @@ namespace Game.States
     {
         public override void Enter()
         {
-            Game.ResetGame();
             UI.MainMenu.gameObject.SetActive(true);
         }
 

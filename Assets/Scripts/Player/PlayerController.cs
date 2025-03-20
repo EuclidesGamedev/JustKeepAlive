@@ -17,6 +17,7 @@ namespace Player
         #region State
         public StateMachine StateMachine { get; private set; }
         public DashState DashState { get; private set; }
+        public DeathState DeathState { get; private set; }
         public IdleState IdleState { get; private set; }
         public JumpState JumpState { get; private set; }
         public MoveState MoveState { get; private set; }
@@ -48,6 +49,7 @@ namespace Player
         private void Start()
         {
             DashState = new DashState(this);
+            DeathState = new DeathState(this);
             IdleState = new IdleState(this);
             JumpState = new JumpState(this);
             MoveState = new MoveState(this);
@@ -59,15 +61,18 @@ namespace Player
             Animator.SetFloat(Blend, LookDirection);
         }
         
-        private void OnDisable()
+        public void TakeDamage()
         {
             OnDeath?.Invoke();
+            StateMachine.TransitionTo(DeathState);
+            RigidBody.linearVelocity = Vector2.zero;
         }
 
         public void Reset()
         {
             gameObject.SetActive(true);
             transform.position = Vector2.down * 4.235f;
+            StateMachine.TransitionTo(IdleState);
         }
     }
 }

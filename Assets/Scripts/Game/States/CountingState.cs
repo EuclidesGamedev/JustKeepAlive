@@ -1,4 +1,4 @@
-using UnityEngine;
+using UnityEngine.InputSystem;
 
 namespace Game.States
 {
@@ -6,8 +6,10 @@ namespace Game.States
     {
         public override void Enter()
         {
+            Game.ResetGame();
             Level.Counter.gameObject.SetActive(true);
             Level.Counter.Animator.Play("Counting");
+            InputSystem.actions.FindActionMap("Player").Disable();
         }
 
         public override void Exit()
