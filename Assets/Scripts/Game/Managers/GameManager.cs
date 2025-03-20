@@ -41,6 +41,11 @@ namespace Game.Managers
         {
             StateMachine.TransitionTo(MainMenuState);
         }
+
+        public void GoToAboutMenu()
+        {
+            StateMachine.TransitionTo(AboutMenuState);
+        }
         
         public void StartCounting()
         {
@@ -76,6 +81,7 @@ namespace Game.Managers
         public GameplayState GameplayState { get; private set; }
         public GameWonState GameWonState { get; private set; }
         public MainMenuState MainMenuState { get; private set; }
+        public AboutMenuState AboutMenuState { get; private set; }
         public PausingState PausingState { get; private set; }
         public StateMachine StateMachine { get; private set; }
         private void SetupStatemachine()
@@ -85,6 +91,7 @@ namespace Game.Managers
             GameplayState = new GameplayState();
             GameWonState = new GameWonState();
             MainMenuState = new MainMenuState();
+            AboutMenuState = new AboutMenuState();
             PausingState = new PausingState();
 
             StateMachine = GetComponent<StateMachine>();
