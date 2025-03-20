@@ -19,6 +19,9 @@ namespace Objects
                 platform.Deactivate(_deactivationTime);
                 __objectPool.Release(this);
             }
+            
+            if (collision.CompareTag("Player"))
+                collision.gameObject.SetActive(false);
         }
     }
 }

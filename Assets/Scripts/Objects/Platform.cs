@@ -5,6 +5,7 @@ namespace Objects
     public class Platform : MonoBehaviour
     {
         #region Getters and setters
+        public BoxCollider2D CollisionBox { get; private set; }
         public SpriteRenderer SpriteRenderer { get; private set; }
         #endregion
         
@@ -16,6 +17,7 @@ namespace Objects
         #region MonoBehaviour
         private void Awake()
         {
+            CollisionBox = GetComponent<BoxCollider2D>();
             SpriteRenderer = GetComponent<SpriteRenderer>();
         }
         
@@ -43,14 +45,14 @@ namespace Objects
         #region Public methods
         public void Activate() 
         {
-            _active = true;
+            CollisionBox.enabled = _active = true;
             SetAlpha(1f);
         }
         
         public void Deactivate(float time)
         {
             _timer = time;
-            _active = false;
+            CollisionBox.enabled = _active = false;
             SetAlpha(.5f);
         }
         #endregion
