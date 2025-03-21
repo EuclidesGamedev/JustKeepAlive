@@ -35,7 +35,7 @@ namespace Player.States
                 Player.Animator.Play("Idle");
                 RestoreJumps();
             }
-            else Player.Animator.Play("Jump");
+            else Player.Animator.Play("Fall");
             
             if (__jumpAction.WasPerformedThisFrame() && Player.JumpCount > 0)
                 StateMachine.TransitionTo(Player.JumpState);

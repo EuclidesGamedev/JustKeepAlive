@@ -15,7 +15,7 @@ namespace Player.States
                 Player.Animator.Play("Run");
                 RestoreJumps();
             }
-            else Player.Animator.Play("Jump");
+            else Player.Animator.Play("Fall");
             
             UpdateDirection();
             if (__jumpAction.WasPerformedThisFrame() && Player.JumpCount > 0)

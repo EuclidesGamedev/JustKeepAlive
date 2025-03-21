@@ -6,14 +6,11 @@ namespace Enemy.States
     public class IdleState : EnemyState
     {
         public IdleState(EnemyController enemy) : base(enemy) {}
-
-        public override void Enter()
-        {
-            Enemy.Animator.Play("Idle");
-        }
-
+        
         public override void Update()
         {
+            Enemy.Animator.Play(OnGround() ? "Idle" : "Fall");
+
             if (GameManager.LevelManager.Player.RigidBody.bodyType == RigidbodyType2D.Dynamic && OnGround())
                 StateMachine.TransitionTo(Enemy.FollowState);
 
