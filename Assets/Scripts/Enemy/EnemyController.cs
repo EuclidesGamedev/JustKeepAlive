@@ -75,8 +75,7 @@ namespace Enemy
         
         public void Release()
         {
-            __objectPool.Release(this);
-            Animator.StopPlayback();
+            Destroy(gameObject);
         }
     }
 }
