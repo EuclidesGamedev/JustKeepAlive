@@ -8,6 +8,7 @@ namespace Game.States
     {
         public override void Enter()
         {
+            Game.AudioHandler.AudioSource.Stop();
             Game.OnGameEnd?.Invoke();
             Level.AudioHandler.Play(2);
             UI.GameOverPanel.gameObject.SetActive(true);
@@ -15,6 +16,7 @@ namespace Game.States
         
         public override void Exit()
         {
+            Level.AudioHandler.AudioSource.Pause();
             UI.GameOverPanel.gameObject.SetActive(false);
         }
 

@@ -14,6 +14,7 @@ namespace Game.States
 
         public override void Exit()
         {
+            Game.AudioHandler.Play(0);
             Level.Counter.Animator.Play("Empty");
             Level.Counter.gameObject.SetActive(false);
         }

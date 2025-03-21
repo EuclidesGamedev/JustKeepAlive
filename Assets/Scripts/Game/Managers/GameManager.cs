@@ -24,13 +24,16 @@ namespace Game.Managers
         #endregion
         
         #region Managers
+        public static CameraManager CameraManager { get; set; }
         public static LevelManager LevelManager { get; set; }
         public static UIManager UIManager { get; set; }
         #endregion
         
         #region MonoBehaviour
+        public AudioHandler AudioHandler { get; private set; }
         private void Start()
         {
+            AudioHandler = GetComponent<AudioHandler>();
             SetupStatemachine();
         }
         #endregion
