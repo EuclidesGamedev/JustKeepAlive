@@ -20,7 +20,7 @@ namespace Objects
             if (!_isSpiked) return;
             
             _timer -= Time.deltaTime;
-            if (_timer <= 0) __objectPool.Release(this);
+            if (_timer <= 0) Release();
         }
 
         private void OnCollisionEnter2D(Collision2D collision)
@@ -29,6 +29,13 @@ namespace Objects
                 _isSpiked = true;
             if (collision.gameObject.CompareTag("Player"))
                 collision.gameObject.GetComponent<PlayerController>().TakeDamage();
+        }
+
+        private void Release()
+        {
+            _isSpiked = false;
+            __objectPool.Release(this);
+            _timer = _spikeTime = Random.Range(3f, 7f); 
         }
     }
 }
