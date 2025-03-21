@@ -7,9 +7,14 @@ namespace Enemy.States
     {
         public FollowState(EnemyController enemy) : base(enemy) {}
 
+        public override void Enter()
+        {
+            Enemy.Animator.Play("Run");
+        }
+
         public override void Update()
         {
-            if (!GameManager.LevelManager.Player.isActiveAndEnabled | !OnGround())
+            if (GameManager.LevelManager.Player.RigidBody.bodyType == RigidbodyType2D.Static | !OnGround())
                 StateMachine.TransitionTo(Enemy.IdleState);
         }
 

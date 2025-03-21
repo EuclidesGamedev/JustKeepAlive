@@ -21,8 +21,8 @@ namespace Enemy
         protected bool OnGround()
         {
             return Physics2D.OverlapArea(
-                Enemy.transform.position + Vector3.down * .251f + Vector3.left * .25f,
-                Enemy.transform.position + Vector3.down * .251f + Vector3.right * .25f,
+                Enemy.transform.position + Vector3.down * .51f + Vector3.left * .5f,
+                Enemy.transform.position + Vector3.down * .51f + Vector3.right * .5f,
                 LayerMask.GetMask("Ground")
             );
         }

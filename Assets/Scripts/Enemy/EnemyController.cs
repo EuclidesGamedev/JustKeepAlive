@@ -8,7 +8,10 @@ namespace Enemy
 {
     public class EnemyController : PooledObject
     {
+        private static readonly int Blend = Animator.StringToHash("Blend");
+
         #region Components
+        public Animator Animator { get; private set; }
         public Rigidbody2D Rigidbody { get; private set; }
         public StateMachine StateMachine { get; private set; }
         #endregion
@@ -30,6 +33,7 @@ namespace Enemy
 
         private void Awake()
         {
+            Animator = GetComponent<Animator>();
             Rigidbody = GetComponent<Rigidbody2D>();
             StateMachine = GetComponent<StateMachine>();
         }
@@ -39,6 +43,11 @@ namespace Enemy
             FollowState = new FollowState(this);
             IdleState = new IdleState(this);
             StateMachine.Initialize(IdleState);
+        }
+
+        private void Update()
+        {
+            Animator.SetFloat(Blend, MoveDirection);
         }
 
         private void OnCollisionEnter2D(Collision2D collision)

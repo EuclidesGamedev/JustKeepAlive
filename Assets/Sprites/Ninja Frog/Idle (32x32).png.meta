@@ -1,25 +1,40 @@
 fileFormatVersion: 2
-guid: 8750f62b985ccf646b9bb45e1b78cba7
+guid: c4903e97908209ca19eba8e7887f40e7
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -9101230857065804138
-    second: Double Jump (32x32)_0
+      213: -6367560908665664636
+    second: Idle (32x32)_0
   - first:
-      213: -6204479477933590408
-    second: Double Jump (32x32)_1
+      213: -6056987297122131021
+    second: Idle (32x32)_1
   - first:
-      213: 7040038629683462113
-    second: Double Jump (32x32)_2
+      213: 8416797952724722639
+    second: Idle (32x32)_2
   - first:
-      213: 781615245368611544
-    second: Double Jump (32x32)_3
+      213: 4883129791460916795
+    second: Idle (32x32)_3
   - first:
-      213: -3939753913355333839
-    second: Double Jump (32x32)_4
+      213: 4278371960119211202
+    second: Idle (32x32)_4
   - first:
-      213: 6301718139250434432
-    second: Double Jump (32x32)_5
+      213: 8644832591467991550
+    second: Idle (32x32)_5
+  - first:
+      213: -7152759390613953277
+    second: Idle (32x32)_6
+  - first:
+      213: 6456874251884481089
+    second: Idle (32x32)_7
+  - first:
+      213: -2526832996998184344
+    second: Idle (32x32)_8
+  - first:
+      213: 4392827059107796345
+    second: Idle (32x32)_9
+  - first:
+      213: -1363835404106015672
+    second: Idle (32x32)_10
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -128,13 +143,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Double Jump (32x32)_0
+      name: Idle (32x32)_0
       rect:
         serializedVersion: 2
-        x: 4
-        y: 4
-        width: 26
-        height: 25
+        x: 0
+        y: 0
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -143,20 +158,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 69ec4c181cee1b180800000000000000
-      internalID: -9101230857065804138
+      spriteID: 48bc1512711e1a7a0800000000000000
+      internalID: -6367560908665664636
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Double Jump (32x32)_1
+      name: Idle (32x32)_1
       rect:
         serializedVersion: 2
-        x: 36
-        y: 4
-        width: 26
-        height: 25
+        x: 32
+        y: 0
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -165,20 +180,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 878319d99c245e9a0800000000000000
-      internalID: -6204479477933590408
+      spriteID: 3b36bf1052241fba0800000000000000
+      internalID: -6056987297122131021
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Double Jump (32x32)_2
+      name: Idle (32x32)_2
       rect:
         serializedVersion: 2
-        x: 68
-        y: 2
-        width: 25
-        height: 26
+        x: 64
+        y: 0
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -187,20 +202,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 1ef7f4f75dd33b160800000000000000
-      internalID: 7040038629683462113
+      spriteID: fc36466d4297ec470800000000000000
+      internalID: 8416797952724722639
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Double Jump (32x32)_3
+      name: Idle (32x32)_3
       rect:
         serializedVersion: 2
-        x: 100
-        y: 2
-        width: 25
-        height: 26
+        x: 96
+        y: 0
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -209,20 +224,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 8d2d93bacead8da00800000000000000
-      internalID: 781615245368611544
+      spriteID: b3eb7246cac54c340800000000000000
+      internalID: 4883129791460916795
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Double Jump (32x32)_4
+      name: Idle (32x32)_4
       rect:
         serializedVersion: 2
-        x: 130
-        y: 3
-        width: 26
-        height: 25
+        x: 128
+        y: 0
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -231,20 +246,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 13f000480be2359c0800000000000000
-      internalID: -3939753913355333839
+      spriteID: 2c4b5e341a4df5b30800000000000000
+      internalID: 4278371960119211202
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Double Jump (32x32)_5
+      name: Idle (32x32)_5
       rect:
         serializedVersion: 2
-        x: 162
-        y: 3
-        width: 26
-        height: 25
+        x: 160
+        y: 0
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -253,8 +268,118 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 08168ac7243347750800000000000000
-      internalID: 6301718139250434432
+      spriteID: ef15b2d807d98f770800000000000000
+      internalID: 8644832591467991550
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Idle (32x32)_6
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 305ad9e2b3b4cbc90800000000000000
+      internalID: -7152759390613953277
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Idle (32x32)_7
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 14ac0fe0cec6b9950800000000000000
+      internalID: 6456874251884481089
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Idle (32x32)_8
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8620037e6c2eeecd0800000000000000
+      internalID: -2526832996998184344
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Idle (32x32)_9
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 97518d1afe476fc30800000000000000
+      internalID: 4392827059107796345
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Idle (32x32)_10
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 84cd8260deea21de0800000000000000
+      internalID: -1363835404106015672
       vertices: []
       indices: 
       edges: []
@@ -263,7 +388,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 8601d7cffa59e90e2bfb5d1ed4c82061
     internalID: 0
     vertices: []
     indices: 
@@ -273,12 +398,17 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Double Jump (32x32)_0: -9101230857065804138
-      Double Jump (32x32)_1: -6204479477933590408
-      Double Jump (32x32)_2: 7040038629683462113
-      Double Jump (32x32)_3: 781615245368611544
-      Double Jump (32x32)_4: -3939753913355333839
-      Double Jump (32x32)_5: 6301718139250434432
+      Idle (32x32)_0: -6367560908665664636
+      Idle (32x32)_1: -6056987297122131021
+      Idle (32x32)_10: -1363835404106015672
+      Idle (32x32)_2: 8416797952724722639
+      Idle (32x32)_3: 4883129791460916795
+      Idle (32x32)_4: 4278371960119211202
+      Idle (32x32)_5: 8644832591467991550
+      Idle (32x32)_6: -7152759390613953277
+      Idle (32x32)_7: 6456874251884481089
+      Idle (32x32)_8: -2526832996998184344
+      Idle (32x32)_9: 4392827059107796345
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
