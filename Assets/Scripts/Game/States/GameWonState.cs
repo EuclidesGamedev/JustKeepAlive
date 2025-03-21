@@ -14,6 +14,7 @@ namespace Game.States
         public override void Exit()
         {
             UI.GameWonPanel.gameObject.SetActive(false);
+            Game.ResetGame();
         }
     }
 }
