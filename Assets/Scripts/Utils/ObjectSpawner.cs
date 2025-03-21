@@ -50,7 +50,7 @@ namespace Utils
         public void FullyDeactivate()
         {
             foreach (PooledObject pooledObject in _objectContainer.GetComponentsInChildren<PooledObject>())
-                _objectPool.Release(pooledObject);
+                Destroy(pooledObject.gameObject);
             _spawnTimer = 0;
             Deactivate();
         }
