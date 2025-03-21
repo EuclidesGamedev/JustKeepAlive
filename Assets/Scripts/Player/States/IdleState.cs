@@ -28,6 +28,8 @@ namespace Player.States
 
         public override void Update()
         {
+            if (__dashAction.WasPerformedThisFrame())
+                StateMachine.TransitionTo(Player.DashState);
             if (OnGround())
             {
                 Player.Animator.Play("Idle");
@@ -35,8 +37,6 @@ namespace Player.States
             }
             else Player.Animator.Play("Jump");
             
-            if (__dashAction.WasPerformedThisFrame())
-                StateMachine.TransitionTo(Player.DashState);
             if (__jumpAction.WasPerformedThisFrame() && Player.JumpCount > 0)
                 StateMachine.TransitionTo(Player.JumpState);
             if (__moveAction.IsInProgress())

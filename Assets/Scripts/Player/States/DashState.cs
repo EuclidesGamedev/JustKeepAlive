@@ -10,9 +10,9 @@ namespace Player.States
         public override void Enter()
         {
             Player.Animator.Play("Jump");
-            Player.RigidBody.linearVelocity = Vector2.right * (Player.LookDirection * Player.DashSpeed);
+            Player.RigidBody.linearVelocityX = Player.LookDirection * Player.DashSpeed;
             Player.AudioHandler.Play(0);
-            _dashTimer = .125f;
+            _dashTimer = .175f;
         }
 
         public override void Update()
@@ -21,6 +21,12 @@ namespace Player.States
             
             if (_dashTimer <= 0)
                 StateMachine.TransitionTo(Player.IdleState);
+        }
+
+        public override void Exit()
+        {
+            _dashTimer = .5f;
+
         }
     }
 }
