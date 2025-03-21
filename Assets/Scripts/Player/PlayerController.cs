@@ -1,5 +1,6 @@
 using System;
 using AI.State;
+using Game.Managers;
 using Player.States;
 using UnityEngine;
 using UnityEngine.Events;
@@ -66,6 +67,7 @@ namespace Player
             OnDeath?.Invoke();
             StateMachine.TransitionTo(DeathState);
             RigidBody.bodyType = RigidbodyType2D.Static;
+            GameManager.LevelManager.ShakeScreen();
         }
 
         public void Reset()

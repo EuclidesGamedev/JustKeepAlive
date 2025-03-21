@@ -1,6 +1,7 @@
 using System;
 using AI.State;
 using Enemy.States;
+using Game.Managers;
 using Player;
 using UnityEngine;
 using Utils;
@@ -58,11 +59,17 @@ namespace Enemy
         private void OnCollisionEnter2D(Collision2D collision)
         {
             if (collision.collider.CompareTag(InvertOnTouchTag))
+            {
                 MoveDirection = -MoveDirection;
+                GameManager.LevelManager.ShakeScreen();
+            }
 
             if (collision.collider.CompareTag(DestroyOnTouchTag))
+            {
+                GameManager.LevelManager.ShakeScreen();
                 StateMachine.TransitionTo(HurtState);
-            
+            }
+
             if (collision.collider.CompareTag("Player"))
                 collision.gameObject.GetComponent<PlayerController>().TakeDamage();
         }

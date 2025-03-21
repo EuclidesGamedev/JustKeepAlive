@@ -1,6 +1,8 @@
 using Player;
+using Unity.Cinemachine;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.InputSystem;
 
 namespace Game.Managers
 {
@@ -9,6 +11,8 @@ namespace Game.Managers
         public AudioHandler AudioHandler { get; private set; }
         [field: SerializeField]
         public UIAnimator Counter { get; private set; }
+        [field: SerializeField]
+        public CinemachineImpulseSource Impulse { get; private set; }
         [field: SerializeField]
         public PlayerController Player { get; private set; }
 
@@ -28,6 +32,11 @@ namespace Game.Managers
         {
             GameManager.LevelManager = this;
             AudioHandler = GetComponent<AudioHandler>();
+        }
+
+        public void ShakeScreen()
+        {
+            Impulse.GenerateImpulse();
         }
     }
 }

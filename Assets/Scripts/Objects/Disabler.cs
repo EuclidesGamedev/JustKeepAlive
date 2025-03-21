@@ -1,3 +1,4 @@
+using Game.Managers;
 using Player;
 using UnityEngine;
 using Utils;
@@ -17,6 +18,7 @@ namespace Objects
         {
             if (collision.TryGetComponent(out Platform platform))
             {
+                GameManager.LevelManager.ShakeScreen();
                 platform.Deactivate(_deactivationTime);
                 __objectPool.Release(this);
             }

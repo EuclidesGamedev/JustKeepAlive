@@ -1,3 +1,4 @@
+using Game.Managers;
 using Player;
 using UnityEngine;
 using Utils;
@@ -26,7 +27,10 @@ namespace Objects
         private void OnCollisionEnter2D(Collision2D collision)
         {
             if (collision.collider.CompareTag("Ground"))
+            {
+                GameManager.LevelManager.ShakeScreen();
                 _isSpiked = true;
+            }
             if (collision.gameObject.CompareTag("Player"))
                 collision.gameObject.GetComponent<PlayerController>().TakeDamage();
         }
