@@ -1,3 +1,4 @@
+using System;
 using AI.State;
 using Enemy.States;
 using Player;
@@ -12,6 +13,7 @@ namespace Enemy
 
         #region Components
         public Animator Animator { get; private set; }
+        public Collider2D Collider { get; private set; }
         public Rigidbody2D Rigidbody { get; private set; }
         public StateMachine StateMachine { get; private set; }
         #endregion
@@ -28,20 +30,23 @@ namespace Enemy
         
         #region States
         public FollowState FollowState { get; private set; }
+        public HurtState HurtState { get; private set; }
         public IdleState IdleState { get; private set; }
         #endregion
 
         private void Awake()
         {
             Animator = GetComponent<Animator>();
+            Collider = GetComponent<Collider2D>();
             Rigidbody = GetComponent<Rigidbody2D>();
             StateMachine = GetComponent<StateMachine>();
+            FollowState = new FollowState(this);
+            HurtState = new HurtState(this);
+            IdleState = new IdleState(this);
         }
 
         private void Start()
         {
-            FollowState = new FollowState(this);
-            IdleState = new IdleState(this);
             StateMachine.Initialize(IdleState);
         }
 
@@ -56,10 +61,22 @@ namespace Enemy
                 MoveDirection = -MoveDirection;
 
             if (collision.collider.CompareTag(DestroyOnTouchTag))
-                __objectPool.Release(this);
+                StateMachine.TransitionTo(HurtState);
             
             if (collision.collider.CompareTag("Player"))
                 collision.gameObject.GetComponent<PlayerController>().TakeDamage();
+        }
+
+        private void OnEnable()
+        {
+            gameObject.layer = LayerMask.NameToLayer("Default");
+            StateMachine.Initialize(IdleState);
+        }
+        
+        public void Release()
+        {
+            __objectPool.Release(this);
+            Animator.StopPlayback();
         }
     }
 }
