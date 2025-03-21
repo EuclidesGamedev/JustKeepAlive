@@ -51,6 +51,7 @@ namespace Utils
         {
             foreach (PooledObject pooledObject in _objectContainer.GetComponentsInChildren<PooledObject>())
                 _objectPool.Release(pooledObject);
+            _spawnTimer = 0;
             Deactivate();
         }
 

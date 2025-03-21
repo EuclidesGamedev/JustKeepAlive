@@ -6,9 +6,6 @@ namespace Game.Managers
 {
     public class LevelManager : MonoBehaviour
     {
-        public UnityEvent OnTimerUpdated;
-        
-        [field: SerializeField]
         public AudioHandler AudioHandler { get; private set; }
         [field: SerializeField]
         public UIAnimator Counter { get; private set; }

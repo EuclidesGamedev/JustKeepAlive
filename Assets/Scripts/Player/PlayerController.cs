@@ -65,12 +65,13 @@ namespace Player
         {
             OnDeath?.Invoke();
             StateMachine.TransitionTo(DeathState);
-            RigidBody.linearVelocity = Vector2.zero;
+            RigidBody.bodyType = RigidbodyType2D.Static;
         }
 
         public void Reset()
         {
             gameObject.SetActive(true);
+            RigidBody.bodyType = RigidbodyType2D.Dynamic;
             transform.position = Vector2.down * 4.235f;
             StateMachine.TransitionTo(IdleState);
         }
