@@ -16,6 +16,7 @@ namespace Game.Managers
         [field: SerializeField]
         public PlayerController Player { get; private set; }
 
+        private bool _isToShake = true;
         private float _timer = 60f;
 
         public float Timer
@@ -36,6 +37,7 @@ namespace Game.Managers
 
         public void ShakeScreen()
         {
+            if (!_isToShake) return;
             Impulse.GenerateImpulse();
         }
     }

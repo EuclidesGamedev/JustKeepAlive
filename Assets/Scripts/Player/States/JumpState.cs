@@ -1,16 +1,17 @@
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 namespace Player.States
 {
     public class JumpState : MoveState
     {
-        private float _targetInY;
+        private float _jumpTimer;
         public JumpState(PlayerController player) : base(player) { }
 
         public override void Enter()
         {
+            Player.RigidBody.AddForceY(12f, ForceMode2D.Impulse);
             Player.Animator.Play("Jump");
-            _targetInY = Player.transform.position.y + Player.JumpForce;
             Player.AudioHandler.Play(0);
             Player.JumpCount--;
         }
@@ -22,24 +23,18 @@ namespace Player.States
 
         public override void Update()
         {
-            if (__dashAction.WasPerformedThisFrame())
-                StateMachine.TransitionTo(Player.DashState);
-            UpdateDirection();
-            if (Physics2D.OverlapPoint(Player.transform.position + Vector3.up * .51f,  LayerMask.GetMask("Ground")))
-                StateMachine.TransitionTo(Player.IdleState);
-            if (Mathf.Abs(Player.RigidBody.position.y - _targetInY) < .05f)
+            if (OnGround() && Player.RigidBody.linearVelocity.y <= 0f)
                 StateMachine.TransitionTo(Player.IdleState);
             if (!__jumpAction.IsInProgress())
                 StateMachine.TransitionTo(Player.IdleState);
+            if (__dashAction.WasPerformedThisFrame())
+                StateMachine.TransitionTo(Player.DashState);
+            UpdateDirection();
         }
 
         public override void FixedUpdate()
         {
-            Vector2 newPosition = new Vector2(
-                Player.RigidBody.position.x + Player.MoveSpeed * __moveAction.ReadValue<Vector2>().x * Time.fixedDeltaTime,
-                Mathf.Lerp(Player.RigidBody.position.y, _targetInY, .25f)
-            );
-            Player.RigidBody.MovePosition(newPosition);
+            Player.RigidBody.linearVelocityX = InputSystem.actions.FindAction("Move").ReadValue<Vector2>().x * Player.MoveSpeed;
         }
     }
 }
