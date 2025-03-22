@@ -45,6 +45,11 @@ namespace Game.Managers
             StateMachine.TransitionTo(MainMenuState);
         }
 
+        public void GoToOptionsMenu()
+        {
+            StateMachine.TransitionTo(OptionsMenuState);
+        }
+
         public void GoToAboutMenu()
         {
             StateMachine.TransitionTo(AboutMenuState);
@@ -83,6 +88,7 @@ namespace Game.Managers
         public GameoverState GameoverState { get; private set; }
         public GameplayState GameplayState { get; private set; }
         public GameWonState GameWonState { get; private set; }
+        public OptionsMenuState OptionsMenuState { get; private set; }
         public MainMenuState MainMenuState { get; private set; }
         public AboutMenuState AboutMenuState { get; private set; }
         public PausingState PausingState { get; private set; }
@@ -94,6 +100,7 @@ namespace Game.Managers
             GameplayState = new GameplayState();
             GameWonState = new GameWonState();
             MainMenuState = new MainMenuState();
+            OptionsMenuState = new OptionsMenuState();
             AboutMenuState = new AboutMenuState();
             PausingState = new PausingState();
 
