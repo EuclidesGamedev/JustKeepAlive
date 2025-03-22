@@ -5834,7 +5834,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
-  m_AnchoredPosition: {x: 1440, y: 63}
+  m_AnchoredPosition: {x: 1440, y: -4}
   m_SizeDelta: {x: 800, y: 1080}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &886286694
@@ -5863,7 +5863,11 @@ MonoBehaviour:
 
     All you need to
     do to win the game is to survive one minute, don''t touch anything else walls
-    and ground and you''ll be fine. GOOD LUCK!'
+    and ground and you''ll be fine. GOOD LUCK!
+
+
+    Also, that''s the second own
+    game I ever finished, so excuse me if there''re some bugs.'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
