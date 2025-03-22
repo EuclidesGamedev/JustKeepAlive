@@ -16,12 +16,15 @@ namespace Game.States
         
         public override void Exit()
         {
+            Game.ResetGame();
             Level.AudioHandler.AudioSource.Pause();
             UI.GameOverPanel.gameObject.SetActive(false);
         }
 
         public override void Update()
         {
+            if (InputSystem.actions.FindAction("Cancel").WasPressedThisFrame())
+                Game.StateMachine.TransitionTo(Game.MainMenuState);
             if (InputSystem.actions.FindAction("Submit").WasPressedThisFrame())
                 Game.StateMachine.TransitionTo(Game.CountingState);
         }

@@ -7,10 +7,16 @@ namespace Objects
 {
     public class Spiked : PooledObject
     {
+        private Rigidbody2D rb;
         private bool _isSpiked = false;
         private float _spikeTime;
         private float _timer;
 
+        private void Awake()
+        {
+            rb = GetComponent<Rigidbody2D>();
+        }
+        
         private void Start()
         {
             _timer = _spikeTime = Random.Range(3f, 7f);
@@ -21,6 +27,7 @@ namespace Objects
             if (!_isSpiked) return;
             
             _timer -= Time.deltaTime;
+            rb.linearVelocityX = 0;
             if (_timer <= 0) Release();
         }
 
